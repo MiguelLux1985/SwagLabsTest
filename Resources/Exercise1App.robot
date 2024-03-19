@@ -2,8 +2,7 @@
 Resource                                     ../Resources/PO/Home.robot
 Resource                                     ../Resources/PO/LogIn.robot
 Resource                                     ../Resources/PO/Products.robot
-Resource                                     C:/Development/Juan's Exercise/Exercise1/Dictionaries.robot
-
+Resource                                     C:/Development/Juan's Exercise - GH/Exercise1/Dictionaries.robot
 *** Keywords ***
 Go to "Home" Page
      Home.Navigate to

@@ -1,56 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.12.2 on win32)" generated="20240319 12:36:20.167" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.12.2 on win32)" generated="20240320 09:53:57.996" rpa="false" schemaversion="4">
 <suite id="s1" name="Exercise1" source="C:\Development\Juan's Exercise - GH\Exercise1\Tests\Exercise1.robot">
-<test id="s1-t1" name="Add and Remove Item from cart" line="19">
+<test id="s1-t1" name="Login with invalid credentials" line="49">
 <kw name="Begin Web Test" library="Exercise1App" type="SETUP">
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <arg>.2s</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" starttime="20240319 12:36:20.556" endtime="20240319 12:36:20.556"/>
+<status status="PASS" starttime="20240320 09:53:58.440" endtime="20240320 09:53:58.440"/>
 </kw>
 <kw name="Set Selenium Timeout" library="SeleniumLibrary">
 <arg>7s</arg>
 <doc>Sets the timeout that is used by various keywords.</doc>
-<status status="PASS" starttime="20240319 12:36:20.556" endtime="20240319 12:36:20.556"/>
+<status status="PASS" starttime="20240320 09:53:58.440" endtime="20240320 09:53:58.440"/>
 </kw>
-<status status="PASS" starttime="20240319 12:36:20.556" endtime="20240319 12:36:20.556"/>
+<status status="PASS" starttime="20240320 09:53:58.440" endtime="20240320 09:53:58.440"/>
 </kw>
 <kw name="Go to e-commerce website" library="Exercise1App">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>about:blank</arg>
 <arg>${HOME.Browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240319 12:36:20.558" level="INFO">Opening browser 'Chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20240319 12:36:20.557" endtime="20240319 12:36:23.969"/>
+<msg timestamp="20240320 09:53:58.455" level="INFO">Opening browser 'Chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20240320 09:53:58.440" endtime="20240320 09:54:01.828"/>
 </kw>
 <kw name="Go to &quot;Home&quot; Page" library="Exercise1App">
 <kw name="Navigate to" library="Home">
 <kw name="Go To" library="SeleniumLibrary">
 <arg>${HOME.URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20240319 12:36:23.971" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
-<status status="PASS" starttime="20240319 12:36:23.970" endtime="20240319 12:36:24.617"/>
+<msg timestamp="20240320 09:54:01.828" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<status status="PASS" starttime="20240320 09:54:01.828" endtime="20240320 09:54:02.747"/>
 </kw>
-<status status="PASS" starttime="20240319 12:36:23.970" endtime="20240319 12:36:24.617"/>
+<status status="PASS" starttime="20240320 09:54:01.828" endtime="20240320 09:54:02.747"/>
 </kw>
-<status status="PASS" starttime="20240319 12:36:23.969" endtime="20240319 12:36:24.617"/>
+<status status="PASS" starttime="20240320 09:54:01.828" endtime="20240320 09:54:02.747"/>
 </kw>
-<status status="PASS" starttime="20240319 12:36:20.557" endtime="20240319 12:36:24.617"/>
+<status status="PASS" starttime="20240320 09:53:58.440" endtime="20240320 09:54:02.747"/>
 </kw>
-<kw name="Should be able to login" library="Exercise1App">
-<kw name="Login with Valid Credentials" library="LogIn">
-<arg>${LOGIN.LoginUsernameText}</arg>
-<arg>${LOGIN.LoginPasswordText}</arg>
+<kw name="LogIn with invalid credentials" library="Exercise1App">
+<kw name="Login with Invalid Credentials" library="LogIn">
+<arg>jlknlvjlgai</arg>
+<arg>l5hgalfign</arg>
 <kw name="Fill &quot;Username&quot; Field" library="LogIn">
 <arg>${Username}</arg>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${LOGIN.LoginUsernameTextBox}</arg>
 <arg>${Username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240319 12:36:24.620" level="INFO">Typing text 'performance_glitch_user' into text field 'xpath= //*[@id="user-name"]'.</msg>
-<status status="PASS" starttime="20240319 12:36:24.619" endtime="20240319 12:36:25.581"/>
+<msg timestamp="20240320 09:54:02.750" level="INFO">Typing text 'jlknlvjlgai' into text field 'xpath= //*[@id="user-name"]'.</msg>
+<status status="PASS" starttime="20240320 09:54:02.750" endtime="20240320 09:54:03.623"/>
 </kw>
-<status status="PASS" starttime="20240319 12:36:24.619" endtime="20240319 12:36:25.581"/>
+<status status="PASS" starttime="20240320 09:54:02.749" endtime="20240320 09:54:03.623"/>
 </kw>
 <kw name="Fill &quot;Password&quot; Field" library="LogIn">
 <arg>${Password}</arg>
@@ -58,95 +58,53 @@
 <arg>${LOGIN.LoginPasswordTextBox}</arg>
 <arg>${Password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240319 12:36:25.584" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
-<status status="PASS" starttime="20240319 12:36:25.583" endtime="20240319 12:36:26.348"/>
+<msg timestamp="20240320 09:54:03.623" level="INFO">Typing text 'l5hgalfign' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20240320 09:54:03.623" endtime="20240320 09:54:04.412"/>
 </kw>
-<status status="PASS" starttime="20240319 12:36:25.581" endtime="20240319 12:36:26.348"/>
+<status status="PASS" starttime="20240320 09:54:03.623" endtime="20240320 09:54:04.412"/>
 </kw>
 <kw name="Click &quot;Submit&quot; Button" library="LogIn">
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${LOGIN.LoginButton}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20240319 12:36:26.349" level="INFO">Clicking button 'id=login-button'.</msg>
-<status status="PASS" starttime="20240319 12:36:26.348" endtime="20240319 12:36:32.125"/>
+<msg timestamp="20240320 09:54:04.412" level="INFO">Clicking button 'id=login-button'.</msg>
+<status status="PASS" starttime="20240320 09:54:04.412" endtime="20240320 09:54:05.095"/>
 </kw>
-<status status="PASS" starttime="20240319 12:36:26.348" endtime="20240319 12:36:32.125"/>
+<status status="PASS" starttime="20240320 09:54:04.412" endtime="20240320 09:54:05.095"/>
 </kw>
-<status status="PASS" starttime="20240319 12:36:24.618" endtime="20240319 12:36:32.125"/>
+<status status="PASS" starttime="20240320 09:54:02.749" endtime="20240320 09:54:05.095"/>
 </kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Products</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20240319 12:36:32.125" endtime="20240319 12:36:32.346"/>
-</kw>
-<status status="PASS" starttime="20240319 12:36:24.617" endtime="20240319 12:36:32.346"/>
-</kw>
-<kw name="Should be able to Add products to cart" library="Exercise1App">
-<kw name="Add Product to Cart" library="Products">
-<kw name="Click Add to Cart button" library="Products">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${PRODUCTS.Add_to_Cart}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20240319 12:36:32.348" level="INFO">Clicking button 'id=add-to-cart-sauce-labs-backpack'.</msg>
-<status status="PASS" starttime="20240319 12:36:32.347" endtime="20240319 12:36:33.452"/>
-</kw>
-<status status="PASS" starttime="20240319 12:36:32.347" endtime="20240319 12:36:33.452"/>
-</kw>
-<status status="PASS" starttime="20240319 12:36:32.347" endtime="20240319 12:36:33.452"/>
-</kw>
-<status status="PASS" starttime="20240319 12:36:32.347" endtime="20240319 12:36:33.452"/>
-</kw>
-<kw name="Wait for 2 seconds" library="Products">
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240319 12:36:35.458" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20240319 12:36:33.453" endtime="20240319 12:36:35.458"/>
-</kw>
-<status status="PASS" starttime="20240319 12:36:33.453" endtime="20240319 12:36:35.458"/>
-</kw>
-<kw name="Should be able to Remove products from cart" library="Exercise1App">
-<kw name="Remove Product from Cart" library="Products">
-<kw name="Click Remove from Cart button" library="Products">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PRODUCTS.RemoveFromCart}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240319 12:36:35.462" level="INFO">Clicking element 'xpath=//button[@id='remove-sauce-labs-backpack']'.</msg>
-<status status="PASS" starttime="20240319 12:36:35.459" endtime="20240319 12:36:35.922"/>
-</kw>
-<status status="PASS" starttime="20240319 12:36:35.459" endtime="20240319 12:36:35.922"/>
-</kw>
-<status status="PASS" starttime="20240319 12:36:35.458" endtime="20240319 12:36:35.922"/>
-</kw>
-<status status="PASS" starttime="20240319 12:36:35.458" endtime="20240319 12:36:35.922"/>
+<status status="PASS" starttime="20240320 09:54:02.749" endtime="20240320 09:54:05.095"/>
 </kw>
 <kw name="End Web Test" library="Exercise1App" type="TEARDOWN">
 <kw name="Sleep" library="BuiltIn">
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240319 12:36:38.924" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20240319 12:36:35.924" endtime="20240319 12:36:38.924"/>
+<msg timestamp="20240320 09:54:08.098" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20240320 09:54:05.097" endtime="20240320 09:54:08.098"/>
 </kw>
 <kw name="Close All Browsers" library="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20240319 12:36:38.924" endtime="20240319 12:36:41.423"/>
+<status status="PASS" starttime="20240320 09:54:08.098" endtime="20240320 09:54:10.620"/>
 </kw>
-<status status="PASS" starttime="20240319 12:36:35.923" endtime="20240319 12:36:41.423"/>
+<status status="PASS" starttime="20240320 09:54:05.095" endtime="20240320 09:54:10.620"/>
 </kw>
-<doc>Runs browser, Access e-commerce website, Adds product to basket and removes it.</doc>
-<tag>1001</tag>
-<tag>Functional</tag>
-<status status="PASS" starttime="20240319 12:36:20.555" endtime="20240319 12:36:41.424"/>
+<doc>Run browser, Access e-commerce website, fill username and password with invalid credentials. Display error message: 'Epic sadface: Username and password do not match any user in this service'</doc>
+<tag>1004</tag>
+<tag>Component</tag>
+<tag>Functianal</tag>
+<status status="PASS" starttime="20240320 09:53:58.440" endtime="20240320 09:54:10.620"/>
 </test>
-<status status="PASS" starttime="20240319 12:36:20.169" endtime="20240319 12:36:41.426"/>
+<status status="PASS" starttime="20240320 09:53:58.012" endtime="20240320 09:54:10.620"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">1001</stat>
-<stat pass="1" fail="0" skip="0">Functional</stat>
+<stat pass="1" fail="0" skip="0">1004</stat>
+<stat pass="1" fail="0" skip="0">Component</stat>
+<stat pass="1" fail="0" skip="0">Functianal</stat>
 </tag>
 <suite>
 <stat pass="1" fail="0" skip="0" id="s1" name="Exercise1">Exercise1</stat>

@@ -1,4 +1,5 @@
 *** Settings ***
+Library                                      OperatingSystem
 Resource                                     ../Resources/PO/Home.robot
 Resource                                     ../Resources/PO/LogIn.robot
 Resource                                     ../Resources/PO/Products.robot
@@ -21,7 +22,14 @@ Should be able to login
       wait until page contains               Products
 
 LogIn with invalid credentials
-      LogIn.Login with Invalid Credentials   jlknlvjlgai       l5hgalfign
+      [Documentation]    Example test case using data from CSV
+      ${Data} =          OperatingSystem.get file            C:/Development/Juan's Exercise - GH/Exercise1/Data/Users.csv
+      @{Values}=         Evaluate                            $Data.split(',')
+      ${username} =      set variable                        ${Values}[2]
+      ${password} =      set variable                        ${Values}[3]
+      input text         ${LOGIN.LoginUsernameTextBox}       ${username}
+      input password     ${LOGIN.LoginPasswordTextBox}       ${password}
+      Click "Submit" Button
 
 Should be able to Add products to cart
       Products.Add Product to Cart

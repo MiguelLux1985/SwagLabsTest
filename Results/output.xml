@@ -1,101 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.12.2 on win32)" generated="20240320 09:53:57.996" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.12.2 on win32)" generated="20240320 09:59:21.942" rpa="false" schemaversion="4">
 <suite id="s1" name="Exercise1" source="C:\Development\Juan's Exercise - GH\Exercise1\Tests\Exercise1.robot">
 <test id="s1-t1" name="Login with invalid credentials" line="49">
 <kw name="Begin Web Test" library="Exercise1App" type="SETUP">
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <arg>.2s</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" starttime="20240320 09:53:58.440" endtime="20240320 09:53:58.440"/>
+<status status="PASS" starttime="20240320 09:59:22.252" endtime="20240320 09:59:22.252"/>
 </kw>
 <kw name="Set Selenium Timeout" library="SeleniumLibrary">
 <arg>7s</arg>
 <doc>Sets the timeout that is used by various keywords.</doc>
-<status status="PASS" starttime="20240320 09:53:58.440" endtime="20240320 09:53:58.440"/>
+<status status="PASS" starttime="20240320 09:59:22.252" endtime="20240320 09:59:22.252"/>
 </kw>
-<status status="PASS" starttime="20240320 09:53:58.440" endtime="20240320 09:53:58.440"/>
+<status status="PASS" starttime="20240320 09:59:22.252" endtime="20240320 09:59:22.252"/>
 </kw>
 <kw name="Go to e-commerce website" library="Exercise1App">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>about:blank</arg>
 <arg>${HOME.Browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240320 09:53:58.455" level="INFO">Opening browser 'Chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20240320 09:53:58.440" endtime="20240320 09:54:01.828"/>
+<msg timestamp="20240320 09:59:22.268" level="INFO">Opening browser 'Chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20240320 09:59:22.252" endtime="20240320 09:59:25.320"/>
 </kw>
 <kw name="Go to &quot;Home&quot; Page" library="Exercise1App">
 <kw name="Navigate to" library="Home">
 <kw name="Go To" library="SeleniumLibrary">
 <arg>${HOME.URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20240320 09:54:01.828" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
-<status status="PASS" starttime="20240320 09:54:01.828" endtime="20240320 09:54:02.747"/>
+<msg timestamp="20240320 09:59:25.320" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<status status="PASS" starttime="20240320 09:59:25.320" endtime="20240320 09:59:25.943"/>
 </kw>
-<status status="PASS" starttime="20240320 09:54:01.828" endtime="20240320 09:54:02.747"/>
+<status status="PASS" starttime="20240320 09:59:25.320" endtime="20240320 09:59:25.943"/>
 </kw>
-<status status="PASS" starttime="20240320 09:54:01.828" endtime="20240320 09:54:02.747"/>
+<status status="PASS" starttime="20240320 09:59:25.320" endtime="20240320 09:59:25.943"/>
 </kw>
-<status status="PASS" starttime="20240320 09:53:58.440" endtime="20240320 09:54:02.747"/>
+<status status="PASS" starttime="20240320 09:59:22.252" endtime="20240320 09:59:25.943"/>
 </kw>
 <kw name="LogIn with invalid credentials" library="Exercise1App">
-<kw name="Login with Invalid Credentials" library="LogIn">
-<arg>jlknlvjlgai</arg>
-<arg>l5hgalfign</arg>
-<kw name="Fill &quot;Username&quot; Field" library="LogIn">
-<arg>${Username}</arg>
+<doc>Example test case using data from CSV</doc>
+<kw name="Get File" library="OperatingSystem">
+<var>${Data}</var>
+<arg>C:/Development/Juan's Exercise - GH/Exercise1/Data/Users.csv</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20240320 09:59:25.943" level="INFO" html="true">Getting file '&lt;a href="file://C:\Development\Juan's Exercise - GH\Exercise1\Data\Users.csv"&gt;C:\Development\Juan's Exercise - GH\Exercise1\Data\Users.csv&lt;/a&gt;'.</msg>
+<msg timestamp="20240320 09:59:25.952" level="INFO">${Data} = miguel,andrades,leo,lopez,bibs,molina,azahara,freya,</msg>
+<status status="PASS" starttime="20240320 09:59:25.943" endtime="20240320 09:59:25.952"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>@{Values}</var>
+<arg>$Data.split(',')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240320 09:59:25.956" level="INFO">@{Values} = [ miguel | andrades | leo | lopez | bibs | molina | azahara | freya |  ]</msg>
+<status status="PASS" starttime="20240320 09:59:25.952" endtime="20240320 09:59:25.956"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${username}</var>
+<arg>${Values}[2]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240320 09:59:25.956" level="INFO">${username} = leo</msg>
+<status status="PASS" starttime="20240320 09:59:25.956" endtime="20240320 09:59:25.956"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${password}</var>
+<arg>${Values}[3]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240320 09:59:25.956" level="INFO">${password} = lopez</msg>
+<status status="PASS" starttime="20240320 09:59:25.956" endtime="20240320 09:59:25.956"/>
+</kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${LOGIN.LoginUsernameTextBox}</arg>
-<arg>${Username}</arg>
+<arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240320 09:54:02.750" level="INFO">Typing text 'jlknlvjlgai' into text field 'xpath= //*[@id="user-name"]'.</msg>
-<status status="PASS" starttime="20240320 09:54:02.750" endtime="20240320 09:54:03.623"/>
+<msg timestamp="20240320 09:59:25.956" level="INFO">Typing text 'leo' into text field 'xpath= //*[@id="user-name"]'.</msg>
+<status status="PASS" starttime="20240320 09:59:25.956" endtime="20240320 09:59:26.774"/>
 </kw>
-<status status="PASS" starttime="20240320 09:54:02.749" endtime="20240320 09:54:03.623"/>
-</kw>
-<kw name="Fill &quot;Password&quot; Field" library="LogIn">
-<arg>${Password}</arg>
-<kw name="Input Text" library="SeleniumLibrary">
+<kw name="Input Password" library="SeleniumLibrary">
 <arg>${LOGIN.LoginPasswordTextBox}</arg>
-<arg>${Password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240320 09:54:03.623" level="INFO">Typing text 'l5hgalfign' into text field 'id=password'.</msg>
-<status status="PASS" starttime="20240320 09:54:03.623" endtime="20240320 09:54:04.412"/>
-</kw>
-<status status="PASS" starttime="20240320 09:54:03.623" endtime="20240320 09:54:04.412"/>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240320 09:59:26.776" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg timestamp="20240320 09:59:27.234" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240320 09:59:27.597" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240320 09:59:26.774" endtime="20240320 09:59:27.597"/>
 </kw>
 <kw name="Click &quot;Submit&quot; Button" library="LogIn">
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${LOGIN.LoginButton}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20240320 09:54:04.412" level="INFO">Clicking button 'id=login-button'.</msg>
-<status status="PASS" starttime="20240320 09:54:04.412" endtime="20240320 09:54:05.095"/>
+<msg timestamp="20240320 09:59:27.597" level="INFO">Clicking button 'id=login-button'.</msg>
+<status status="PASS" starttime="20240320 09:59:27.597" endtime="20240320 09:59:28.293"/>
 </kw>
-<status status="PASS" starttime="20240320 09:54:04.412" endtime="20240320 09:54:05.095"/>
+<status status="PASS" starttime="20240320 09:59:27.597" endtime="20240320 09:59:28.293"/>
 </kw>
-<status status="PASS" starttime="20240320 09:54:02.749" endtime="20240320 09:54:05.095"/>
-</kw>
-<status status="PASS" starttime="20240320 09:54:02.749" endtime="20240320 09:54:05.095"/>
+<status status="PASS" starttime="20240320 09:59:25.943" endtime="20240320 09:59:28.293"/>
 </kw>
 <kw name="End Web Test" library="Exercise1App" type="TEARDOWN">
 <kw name="Sleep" library="BuiltIn">
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240320 09:54:08.098" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20240320 09:54:05.097" endtime="20240320 09:54:08.098"/>
+<msg timestamp="20240320 09:59:31.324" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20240320 09:59:28.293" endtime="20240320 09:59:31.324"/>
 </kw>
 <kw name="Close All Browsers" library="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20240320 09:54:08.098" endtime="20240320 09:54:10.620"/>
+<status status="PASS" starttime="20240320 09:59:31.324" endtime="20240320 09:59:33.820"/>
 </kw>
-<status status="PASS" starttime="20240320 09:54:05.095" endtime="20240320 09:54:10.620"/>
+<status status="PASS" starttime="20240320 09:59:28.293" endtime="20240320 09:59:33.820"/>
 </kw>
 <doc>Run browser, Access e-commerce website, fill username and password with invalid credentials. Display error message: 'Epic sadface: Username and password do not match any user in this service'</doc>
 <tag>1004</tag>
 <tag>Component</tag>
 <tag>Functianal</tag>
-<status status="PASS" starttime="20240320 09:53:58.440" endtime="20240320 09:54:10.620"/>
+<status status="PASS" starttime="20240320 09:59:22.252" endtime="20240320 09:59:33.820"/>
 </test>
-<status status="PASS" starttime="20240320 09:53:58.012" endtime="20240320 09:54:10.620"/>
+<status status="PASS" starttime="20240320 09:59:21.958" endtime="20240320 09:59:33.827"/>
 </suite>
 <statistics>
 <total>
